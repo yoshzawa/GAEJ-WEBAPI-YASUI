@@ -15,7 +15,7 @@ List<Item> items = (List<Item>)request.getAttribute("Items");
 <TABLE border=1>
 <% for (Item item : items) {%>
 <TR>
-<TH><%= item.janCode %></TH>
+<TH><a href="/yasui/getPrice?JAN=<%= item.janCode %>"><%= item.janCode %></a></TH>
 <TD><%= item.itemName %></TD>
 <TD><a href="<%= item.itemUrl %>"><%= item.itemUrl %></a></TD>
 <TD><%= item.price %></TD>

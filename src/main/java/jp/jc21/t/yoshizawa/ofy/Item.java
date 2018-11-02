@@ -6,7 +6,7 @@ import com.googlecode.objectify.annotation.*;
 
 @Entity
 public class Item {
-	  @Id public String janCode;
+	  @Id @Index public String janCode;
 
 	  public String itemName;
 	  public String itemUrl;
