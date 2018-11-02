@@ -2,7 +2,7 @@
 
 Google App Engine for Java (+Objectify)で、WebAPIを作るテスト。
 
-デプロイしました（http://h30jsonkadai.fivepro.xyz/）
+デプロイしました( http://h30jsonkadai.fivepro.xyz/ )
 
 ## 使い方
 
