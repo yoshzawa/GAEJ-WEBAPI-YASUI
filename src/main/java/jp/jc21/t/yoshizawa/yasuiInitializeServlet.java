@@ -39,10 +39,10 @@ public class yasuiInitializeServlet extends HttpServlet {
 		
 		Item item1 = new Item("4948872414739","PlayStation4　Pro　ジェット・ブラック　1TB　CUH-7200BB01"
 				,"https://www.yamada-denkiweb.com/1178162019",43167);
-		ObjectifyService.ofy().save().entity(item1).now();
+		item1.save();
 		Item item2 = new Item("49815443","ハインツ イエローマスタード 逆さボトル 226g"
 				,"https://www.kenko.com/P8389764/p.html",268);
-		ObjectifyService.ofy().save().entity(item2).now();
+		item2.save();
 	}
 
 }

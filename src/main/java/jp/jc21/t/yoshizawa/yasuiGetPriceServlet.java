@@ -38,19 +38,17 @@ public class yasuiGetPriceServlet extends HttpServlet {
 		
 		String janCode = request.getParameter("JAN");
 		janCode=(janCode==null)?"":janCode;
-//		List<Item> items = ObjectifyService.ofy().load().type(Item.class).
-//				filter("janCode = ", janCode).list();
-		List<Item> items = ObjectifyService.ofy().load().type(Item.class).
-				filterKey(KeyFactory.createKey("Item", janCode)).list();
 		String result = null;
-		if(items.size() == 1) {
-			result="OK";
-		} else {
+		
+		Item item=Item.getObjectById(janCode);
+		if(item == null) {
 			result="FAIL";
-			items=null;
+		} else {
+			result="OK";
 		}
+
 		request.setAttribute("Result", result);
-		request.setAttribute("Items", items);
+		request.setAttribute("Item", item);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/yasuiGetPrice.jsp");
 		rd.forward(request, response);
