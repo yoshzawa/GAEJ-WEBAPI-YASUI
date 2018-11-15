@@ -37,7 +37,7 @@ public class yasuiServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		List<Item> items = ObjectifyService.ofy().load().type(Item.class).list();
+		List<Item> items = Item.getlist();
 		request.setAttribute("Items", items);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/yasui.jsp");

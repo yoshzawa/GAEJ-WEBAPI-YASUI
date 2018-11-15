@@ -1,11 +1,14 @@
 package jp.jc21.t.yoshizawa.ofy;
 import java.util.Date;
+import java.util.List;
 
+import com.google.appengine.api.datastore.Key;
+import com.google.appengine.api.datastore.KeyFactory;
 import com.googlecode.objectify.*;
 import com.googlecode.objectify.annotation.*;
 
 @Entity
-public class Item {
+public final class Item {
 	  @Id @Index public String janCode;
 
 	  public String itemName;
@@ -75,6 +78,37 @@ public class Item {
 		this(janCode,itemName,itemUrl,price,new Date());
 	}
 	public Item() {	}
+
+
+	
+	
+	
+	public void save() {
+		ObjectifyService.ofy().save().entity(this).now();		
+	}
+
+
+	public static List<Item> getlist() {
+		return ObjectifyService.ofy().load().type(Item.class).list();
+	}
+
+
+	public static List<Item> getListById(String id) {
+		Key itemKey = KeyFactory.createKey("Item", id);
+		List<Item> items = ObjectifyService.ofy().load().type(Item.class).
+				filterKey(itemKey).list();
+		return items;
+	}
+
+
+	public static Item getObjectById(String janCode) {
+		List<Item> list = getListById(janCode);
+		if(list.size()!=1) {
+			return null;
+		} else {
+			return list.get(0);
+		}
+	}
 	
 
 }

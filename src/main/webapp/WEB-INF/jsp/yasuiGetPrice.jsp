@@ -3,16 +3,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% 
-List<Item> items = (List<Item>)request.getAttribute("Items");
+Item item = (Item)request.getAttribute("Item");
 String result = (String)request.getAttribute("Result");
-if(items == null ){
+if(item == null ){
 %>
 {
 	"RESULT" : "FAIL"	
 }
-<% } else { 
-Item item = items.get(0);
-%>
+<% } else { %>
 {
 	"RESULT" : "OK" ,
 	"JAN" : "<%= item.getJanCode() %>" ,
