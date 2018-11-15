@@ -2,7 +2,7 @@
 
 Google App Engine for Java (+Objectify)で、WebAPIを作るテスト。
 
-デプロイしました( http://h30jsonkadai.fivepro.xyz/ )
+デプロイしました( [http://h30jsonkadai.fivepro.xyz/](http://h30jsonkadai.fivepro.xyz/) )
 
 ## 使い方
 
@@ -26,6 +26,7 @@ Objectifyでデータを操作する部分がServletに書いてあるのはそ�
 
 JANコードを渡すと、最安値情報をJSON形式で返す部分はそのうち作ります　→　できました
 
-XAMARIN.FORMSでアクセスして中身を表示するアプリは別プロジェクトで作ります。
+XAMARIN.FORMSでアクセスして中身を表示するアプリは別プロジェクトで作ります  →　
+[できました](https://github.com/yoshzawa/XAMARIN-WEBAPI-YASUI)
 
 readmeはそのうちもっとマシにします。

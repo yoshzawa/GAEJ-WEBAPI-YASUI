@@ -1,4 +1,4 @@
-package jp.jc21.t.yoshizawa;
+package jp.jc21.t.yoshizawa.ofy;
 
 import javax.servlet.annotation.WebFilter;
 
