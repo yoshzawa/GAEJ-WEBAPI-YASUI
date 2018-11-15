@@ -19,13 +19,6 @@ import jp.jc21.t.yoshizawa.ofy.Item;
 public class yasuiGetPriceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public yasuiGetPriceServlet() {
-        super();
-    }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

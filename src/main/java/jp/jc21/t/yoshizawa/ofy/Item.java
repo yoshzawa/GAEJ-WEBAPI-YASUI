@@ -16,6 +16,9 @@ public final class Item {
 	  public int price;
 	  public Date created;
 	  
+	  public static void register() {
+			ObjectifyService.register(Item.class);
+	  }
 	  
 	  public String getJanCode() {
 		return janCode;
