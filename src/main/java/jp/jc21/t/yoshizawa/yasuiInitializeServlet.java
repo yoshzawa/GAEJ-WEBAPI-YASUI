@@ -30,6 +30,8 @@ public class yasuiInitializeServlet extends HttpServlet {
 		Item item2 = new Item("49815443","ハインツ イエローマスタード 逆さボトル 226g"
 				,"https://www.kenko.com/P8389764/p.html",268);
 		item2.save();
+		new Item("4960999670010","インクタンク BCI-326GY グレー" , 
+				"https://www.askul.co.jp/p/3244270/",1030).save();
 	}
 
 }
