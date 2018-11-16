@@ -1,5 +1,5 @@
 package jp.jc21.t.yoshizawa;
-
+ 
 import java.io.IOException;
 
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 )
 public class HelloAppEngine extends HttpServlet {
 
-  @Override
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+@Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) 
       throws IOException {
 
