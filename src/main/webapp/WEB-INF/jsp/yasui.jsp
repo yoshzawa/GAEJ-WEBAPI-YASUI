@@ -19,6 +19,7 @@ List<Item> items = (List<Item>)request.getAttribute("Items");
 <TD><%= item.itemName %></TD>
 <TD><a href="<%= item.itemUrl %>"><%= item.itemUrl %></a></TD>
 <TD><%= item.price %></TD>
+<TD><a href="/yasui/ShopList?SHOPNAME=<%= item.shopName %>"><%= item.shopName %></a></TD>
 </TR>
 <% } %>
 </TABLE>

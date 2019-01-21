@@ -38,6 +38,11 @@ public class YasuiShopListServlet extends HttpServlet {
 			System.out.println(r.shopName);
 			System.out.println("-----");
 		}
+		request.setAttribute("Items", results);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/yasui.jsp");
+		rd.forward(request, response);
+
 	}
 
 }
