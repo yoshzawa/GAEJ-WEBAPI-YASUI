@@ -14,6 +14,8 @@ public final class Item {
 	  public String itemName;
 	  public String itemUrl;
 	  public int price;
+	  @Index 
+	  public String shopName;
 	  public Date created;
 	  
 	  public static void register() {
@@ -70,15 +72,24 @@ public final class Item {
 	}
 
 
-	public Item(String janCode,String itemName,String itemUrl,int price,Date created) {
+	public String getShopName() {
+		return shopName;
+	}
+
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
+	}
+
+	public Item(String janCode,String itemName,String itemUrl,int price,String shopName,Date created) {
 		setJanCode(janCode);
 		setItemName(itemName);
 		setItemUrl(itemUrl);
 		setPrice(price);
+		setShopName(shopName);
 		setCreated(created);
 	}
-	public Item(String janCode,String itemName,String itemUrl,int price) {
-		this(janCode,itemName,itemUrl,price,new Date());
+	public Item(String janCode,String itemName,String itemUrl,String shopName,int price) {
+		this(janCode,itemName,itemUrl,price,shopName,new Date());
 	}
 	public Item() {	}
 
@@ -104,6 +115,12 @@ public final class Item {
 	}
 
 
+	public static List<Item> getlistByShopName(String shopName) {
+		List<Item> items = ObjectifyService.ofy().load().type(Item.class).
+				filter("shopName",shopName).list();
+		return items;
+	}
+	
 	public static Item getObjectById(String janCode) {
 		List<Item> list = getListById(janCode);
 		if(list.size()!=1) {
@@ -112,6 +129,9 @@ public final class Item {
 			return list.get(0);
 		}
 	}
+	
+	
+	
 	
 
 }

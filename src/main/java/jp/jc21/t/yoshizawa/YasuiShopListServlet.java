@@ -15,31 +15,29 @@ import jp.jc21.t.yoshizawa.ofy.Item;
 /**
  * Servlet implementation class yasuiServlet
  */
-@WebServlet("/yasui/GetPrice")
-public class yasuiGetPriceServlet extends HttpServlet {
+@WebServlet("/yasui/ShopList")
+public class YasuiShopListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String janCode = request.getParameter("JAN");
-		janCode=(janCode==null)?"":janCode;
+		String shopName = request.getParameter("SHOPNAME");
+		shopName=(shopName==null)?"":shopName;
 		String result = null;
 		
-		Item item=Item.getObjectById(janCode);
-		if(item == null) {
-			result="FAIL";
-		} else {
-			result="OK";
-		}
-
-		request.setAttribute("Result", result);
-		request.setAttribute("Item", item);
+		List<Item> results = Item.getlistByShopName(shopName);
+		System.out.println(results.size());
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/yasuiGetPrice.jsp");
-		rd.forward(request, response);
+		for(Item r:results) {
+			System.out.println(r.itemName);
+			System.out.println(r.shopName);
+			System.out.println("-----");
+		}
 	}
 
 }
